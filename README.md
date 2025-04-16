@@ -6,7 +6,7 @@
 
 ### 2. Генерация изображений
 
-- [Пример](examples/image_generation/image_generation.py)
+- [Пример](examples/image-generation/image_generation.py)
 
 ### 3. AI ассистенты
 
@@ -18,6 +18,8 @@
 - [Пример](examples/classification/zero_shot_classification.py)
 
 ### 5. Telegram-боты
+
+- [Пример](examples/telegram-bot/telegram_bot.py)
 
 ## Полезные ссылки
 
