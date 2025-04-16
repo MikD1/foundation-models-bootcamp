@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from yandex_cloud_ml_sdk import YCloudML
 
-message = "Продам гараж, недорого, в лс"
+message = "Нейросети для творчества и заработка"
 
 load_dotenv()
 sdk = YCloudML(
@@ -17,6 +17,10 @@ model = sdk.models.text_classifiers("yandexgpt").configure(
 )
 
 result = model.run(message)
-prediction = max(result, key=lambda x: x.confidence)
 
-print(prediction.label)
+best_prediction = result.predictions[0]
+for prediction in result.predictions:
+    if prediction.confidence > best_prediction.confidence:
+        best_prediction = prediction
+
+print(best_prediction.label)

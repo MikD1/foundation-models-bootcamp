@@ -21,6 +21,5 @@ messages = [
     {'role': 'user', 'text': user_prompt},
 ]
 
-operation = model.run_deferred(messages)
-result = operation.wait()
+result = model.run(messages)
 print(result.text)

@@ -14,10 +14,9 @@ sdk = YCloudML(
 
 file = sdk.files.upload("./data/grant.md")
 operation = sdk.search_indexes.create_deferred([file], index_type=TextSearchIndexType())
-
 text_index = operation.wait()
-text_tool = sdk.tools.search_index(text_index)
 
+text_tool = sdk.tools.search_index(text_index)
 model = sdk.models.completions("yandexgpt", model_version="rc")
 assistant = sdk.assistants.create(model, tools=[text_tool])
 
